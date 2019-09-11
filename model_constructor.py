@@ -313,6 +313,7 @@ class Model_constructor:
                     inpt = Model_constructor.conv_bn_layer(inpt, [1, 1, input_depth, output_depth * 4], block_stride)
 
             res = tf.add(conv2, inpt)
+            res = tf.nn.relu(res)
         id[0] += 1
         return res
 
